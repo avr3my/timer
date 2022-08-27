@@ -1,0 +1,123 @@
+@import url('http://fonts.cdnfonts.com/css/ds-digital');
+
+
+* {
+    box-sizing: border-box;
+    user-select: none; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body { margin: 0; }
+
+input::-webkit-inner-spin-button{
+    appearance: none;
+}
+
+input[type=number]{
+    height: 70px;
+    width: 100px;
+    text-align: center;
+    font-size: 55px;
+    line-height: 55px;
+    border: none;
+    box-shadow: 0 0 3px black;
+    border-radius: 9px;
+}
+input:focus{
+    transform: scale(1.05);
+    transition: 0.1s;
+
+    outline: none;
+}
+
+#submit{
+    cursor: pointer;
+    margin: 30px;
+    height: 70px;
+    width: 180px;
+    background-color: white;
+    text-align: center;
+    line-height: 70px;
+    font-size: 33px;
+    box-shadow: 0 0 3px black;
+    border-radius: 6px;
+    transition: 0.3s;
+    /* border: 1px solid black; */
+}
+#submit:hover{
+    background-color: #aaa;
+    color: white;
+    text-shadow: 0 0 2px black;
+    box-shadow: 0 0 3px 1px black;
+}
+#submit:active{
+    transition: 0s;
+    transform: scale(0.98);
+    box-shadow: 0 0 3px 0.5px black;
+}
+form {
+    padding: 15px;
+    /* background-color: aqua; */
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    align-items: center;
+    justify-content: space-around;
+    height: fit-content;
+    width: 370px;
+}
+
+#clock{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hidden {
+    display:none;
+}
+
+#counter {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* border: 3px solid black; */
+    width: 370px;
+    height: 200px;
+}
+
+#resetBotton{
+    position: absolute;
+    top:115px;
+    left: 95px;
+    background-color: rgb(234, 56, 56);
+    color: white;
+    cursor: pointer;
+    height: 70px;
+    width: 180px;
+    text-align: center;
+    line-height: 70px;
+    font-size: 38px;
+    box-shadow: 0 0 3px black;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+/* #resetBotton:hover{
+    background-image: radial-gradient( white,white,rgb(234, 56, 56));
+    color: rgb(234, 56, 56);
+} */
+#clockVisual{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    /* border: 2px solid black; */
+    display: flex;
+    font-family: 'DS-Digital', sans-serif;
+
+}
+#clockVisual *{
+    font-family: 'DS-Digital', sans-serif;
+    font-size: 100px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form id="clock" >
+        <input type="number" onchange="validate(0,23)" id="hours" placeholder="hh" min="0" max="23" value="">
+        <input type="number" onchange="validate(1,59)" id="minutes" placeholder="mm" min="0" max="59">
+        <input type="number" onchange="validate(2,59)" id="seconds" placeholder="ss" min="0" max="59">
+        <div id="submit" onclick="startTimer()">Start Timer</div>
+    </form>
+    <div id="counter" class="hidden">
+        <div id="clockVisual">
+            <div class="timebox">0</div>
+            <div class="timebox">0</div>
+            <div class="ddot">:</div>
+            <div class="timebox">0</div>
+            <div class="timebox">0</div>
+            <div class="ddot">:</div>
+            <div class="timebox">0</div>
+            <div class="timebox">0</div>
+        </div>
+        <div id="resetBotton" onclick="reset()">reset</div>
+    </div>
+</body>
+
+</html>
