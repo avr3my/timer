@@ -1,7 +1,7 @@
 var inputs = document.getElementById("clock");
 var counter = document.getElementById("counter");
 var timeValue, minutesValue, secondsValue, hoursValue;
-
+var play;
 function validate(box, max) {
     if (clock.children[box].value < 0)
         clock.children[box].value = 0;
@@ -38,7 +38,7 @@ function startTimer() {
         timebox[3].textContent = minutesValue%10
         timebox[4].textContent = parseInt(secondsValue/10)
         timebox[5].textContent = secondsValue%10;
-    let play = setInterval(() => {
+    play = setInterval(() => {
         secondsValue = parseInt(timeValue % 60);
         minutesValue = parseInt((timeValue / 60) % 60);
         hoursValue = parseInt(timeValue / 3600);
