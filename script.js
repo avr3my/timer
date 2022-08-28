@@ -51,13 +51,16 @@ function startTimer() {
         timebox[4].textContent = parseInt(secondsValue/10)
         timebox[5].textContent = secondsValue%10;
         if(timeValue < -1) {
-            clearInterval(play);
+           
             reset();
         }
     }, 1000);
 }
 
 function reset() {
+
+clearInterval(play);
+
     let inputs = document.getElementById("clock");
     let counter = document.getElementById("counter");
     inputs.classList.remove("hidden");
