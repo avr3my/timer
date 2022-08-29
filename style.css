@@ -1,5 +1,8 @@
 @import url('http://fonts.cdnfonts.com/css/ds-digital');
-
+@font-face {
+    font-family: digital_font;
+    src: url(./digital-7/digital-7\ \(mono\).ttf);
+  }
 
 * {
     box-sizing: border-box;
@@ -118,6 +121,6 @@ form {
 
 }
 #clockVisual *{
-    font-family: 'DS-Digital', sans-serif;
+    font-family: digital_font;
     font-size: 100px;
 }

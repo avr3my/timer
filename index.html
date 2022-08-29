@@ -15,7 +15,7 @@
         <input type="number" onchange="validate(0,23)" id="hours" placeholder="hh" min="0" max="23" value="">
         <input type="number" onchange="validate(1,59)" id="minutes" placeholder="mm" min="0" max="59">
         <input type="number" onchange="validate(2,59)" id="seconds" placeholder="ss" min="0" max="59">
-        <div id="submit" onclick="startTimer()">Start Timer</div>
+        <div id="submit" tabindex="0" onclick="startTimer()">Start Timer</div>
     </form>
     <div id="counter" class="hidden">
         <div id="clockVisual">

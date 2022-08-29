@@ -2,6 +2,7 @@ var inputs = document.getElementById("clock");
 var counter = document.getElementById("counter");
 var timeValue, minutesValue, secondsValue, hoursValue;
 var play;
+
 function validate(box, max) {
     if (clock.children[box].value < 0)
         clock.children[box].value = 0;
@@ -12,7 +13,6 @@ function validate(box, max) {
 function startTimer() {
     let inputs = document.getElementById("clock");
     let counter = document.getElementById("counter");
-
     hoursValue = clock.children[0].value;
     if (!hoursValue) hoursValue = 0
     minutesValue = clock.children[1].value;
@@ -20,47 +20,33 @@ function startTimer() {
     secondsValue = clock.children[2].value;
     if (!secondsValue) secondsValue = 0
     timeValue = hoursValue * 3600 + minutesValue * 60 + (secondsValue - 0);
-    console.log(timeValue);
     inputs.classList.add("hidden")
     counter.classList.remove("hidden")
+    if (timeValue == 0) reset();
+    changefunc();
+    play = setInterval(() => {
+        changefunc();
+        if (timeValue < -1)
+            reset();
+    }, 1000);
+}
 
-
-    if (timeValue ==0) reset();
-
+function changefunc() {
     secondsValue = parseInt(timeValue % 60);
     minutesValue = parseInt((timeValue / 60) % 60);
     hoursValue = parseInt(timeValue / 3600);
     timeValue--;
     let timebox = document.getElementsByClassName("timebox")
-        timebox[0].textContent = parseInt(hoursValue/10)
-        timebox[1].textContent = hoursValue%10
-        timebox[2].textContent = parseInt(minutesValue/10)
-        timebox[3].textContent = minutesValue%10
-        timebox[4].textContent = parseInt(secondsValue/10)
-        timebox[5].textContent = secondsValue%10;
-    play = setInterval(() => {
-        secondsValue = parseInt(timeValue % 60);
-        minutesValue = parseInt((timeValue / 60) % 60);
-        hoursValue = parseInt(timeValue / 3600);
-        timeValue--;
-        let timebox = document.getElementsByClassName("timebox")
-        timebox[0].textContent = parseInt(hoursValue/10)
-        timebox[1].textContent = hoursValue%10
-        timebox[2].textContent = parseInt(minutesValue/10)
-        timebox[3].textContent = minutesValue%10
-        timebox[4].textContent = parseInt(secondsValue/10)
-        timebox[5].textContent = secondsValue%10;
-        if(timeValue < -1) {
-           
-            reset();
-        }
-    }, 1000);
+    timebox[0].textContent = parseInt(hoursValue / 10)
+    timebox[1].textContent = hoursValue % 10
+    timebox[2].textContent = parseInt(minutesValue / 10)
+    timebox[3].textContent = minutesValue % 10
+    timebox[4].textContent = parseInt(secondsValue / 10)
+    timebox[5].textContent = secondsValue % 10;
 }
 
 function reset() {
-
-clearInterval(play);
-
+    clearInterval(play);
     let inputs = document.getElementById("clock");
     let counter = document.getElementById("counter");
     inputs.classList.remove("hidden");
