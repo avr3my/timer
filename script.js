@@ -2,14 +2,22 @@ var inputs = document.getElementById("clock");
 var counter = document.getElementById("counter");
 var timeValue, minutesValue, secondsValue, hoursValue;
 var play;
-
 function validate(box, max) {
     if (clock.children[box].value < 0)
         clock.children[box].value = 0;
     if (clock.children[box].value > max)
         clock.children[box].value = max;
 }
-
+let resetBotton = document.getElementById("resetBotton")
+resetBotton.addEventListener("keydown", function (event) {
+    if(event.key == "Enter")
+        startTimer();
+})
+let submit = document.getElementById("submit")
+submit.addEventListener("keydown", function (event) {
+    if(event.key == "Enter")
+        startTimer();
+})
 function startTimer() {
     let inputs = document.getElementById("clock");
     let counter = document.getElementById("counter");
@@ -20,6 +28,11 @@ function startTimer() {
     secondsValue = clock.children[2].value;
     if (!secondsValue) secondsValue = 0
     timeValue = hoursValue * 3600 + minutesValue * 60 + (secondsValue - 0);
+
+    clock.children[0].value = "";
+    clock.children[1].value = "";
+    clock.children[2].value = "";
+
     inputs.classList.add("hidden")
     counter.classList.remove("hidden")
     if (timeValue == 0) reset();
@@ -37,12 +50,12 @@ function changefunc() {
     hoursValue = parseInt(timeValue / 3600);
     timeValue--;
     let timebox = document.getElementsByClassName("timebox")
-    timebox[0].textContent = parseInt(hoursValue / 10)
-    timebox[1].textContent = hoursValue % 10
-    timebox[2].textContent = parseInt(minutesValue / 10)
-    timebox[3].textContent = minutesValue % 10
-    timebox[4].textContent = parseInt(secondsValue / 10)
-    timebox[5].textContent = secondsValue % 10;
+    timebox[0].textContent = hoursValue
+    timebox[1].textContent = minutesValue
+    timebox[2].textContent = secondsValue;
+    timebox[0].textContent = timebox[0].textContent.padStart(2,'0')
+    timebox[1].textContent = timebox[1].textContent.padStart(2,'0')
+    timebox[2].textContent = timebox[2].textContent.padStart(2,'0')
 }
 
 function reset() {
@@ -51,8 +64,6 @@ function reset() {
     let counter = document.getElementById("counter");
     inputs.classList.remove("hidden");
     counter.classList.add("hidden");
-    clock.children[0].value = "";
-    clock.children[1].value = "";
-    clock.children[2].value = "";
+    
 
 }

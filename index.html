@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timer</title>
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -19,16 +19,16 @@
     </form>
     <div id="counter" class="hidden">
         <div id="clockVisual">
-            <div class="timebox">0</div>
-            <div class="timebox">0</div>
-            <div class="ddot">:</div>
-            <div class="timebox">0</div>
-            <div class="timebox">0</div>
-            <div class="ddot">:</div>
-            <div class="timebox">0</div>
-            <div class="timebox">0</div>
+            <!-- <div class="timebox">0</div> -->
+            <div class="timebox">00</div>
+            <div>:</div>
+            <!-- <div class="timebox">0</div> -->
+            <div class="timebox">00</div>
+            <div>:</div>
+            <!-- <div class="timebox">0</div> -->
+            <div class="timebox">00</div>
         </div>
-        <div id="resetBotton" onclick="reset()">reset</div>
+        <div id="resetBotton" tabindex="0"onclick="reset()">Reset</div>
     </div>
 </body>
 

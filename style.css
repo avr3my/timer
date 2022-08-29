@@ -47,7 +47,7 @@ input:focus{
     transition: 0.3s;
     /* border: 1px solid black; */
 }
-#submit:hover{
+#submit:hover, #submit:focus{
     background-color: #aaa;
     color: white;
     text-shadow: 0 0 2px black;
@@ -107,10 +107,7 @@ form {
     border-radius: 6px;
     transition: 0.3s;
 }
-/* #resetBotton:hover{
-    background-image: radial-gradient( white,white,rgb(234, 56, 56));
-    color: rgb(234, 56, 56);
-} */
+
 #clockVisual{
     position: absolute;
     left: 50%;
